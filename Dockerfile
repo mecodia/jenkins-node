@@ -1,8 +1,8 @@
-FROM jenkins/jnlp-slave:alpine
-MAINTAINER mecodia GmbH
+FROM jenkins/inbound-agent
+LABEL MAINTAINER="mecodia GmbH" 
 
 USER root
-RUN apt update && apt add nodejs npm
+RUN apk update && apk add nodejs npm
 RUN npm install eslint
 
 USER jenkins
